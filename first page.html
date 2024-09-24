@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hari's Tourist Places Explorer</title>
+    <style>
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('./images/pic_6.jpg'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: flex-end; /* Align to the right */
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px 60px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+        }
+
+        nav .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin-right: auto; /* Push logo to the left */
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #28a745;
+        }
+
+        .call-now {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .call-now:hover {
+            background-color: #218838;
+        }
+
+        .hero-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: white;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            z-index: 1;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .explore-button {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .explore-button:hover {
+            background-color: #218838;
+            transform: scale(1.1);
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 80px 50px;
+            background-color: #f8f9fa;
+        }
+
+        .services-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .services-section .service {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .services-section .service div {
+            flex-basis: 30%;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .services-section .service h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: #28a745;
+            font-weight: 600;
+        }
+
+        .services-section .service p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 50px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer .footer-info {
+            margin-bottom: 20px;
+        }
+
+        footer .footer-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        footer .footer-info p {
+            margin-bottom: 5px;
+        }
+
+        footer .footer-contact {
+            margin-top: 30px;
+        }
+
+        footer .footer-contact p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">Hari's Explorer</div>
+        <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <a href="tel:9553688238" class="call-now">Call Now</a>
+    </nav>
+    
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div>
+            <h1>Welcome to Hari's Tourist Places Explorer</h1>
+            <p>Discover India's top tourist destinations by exploring your selected state, district, and city.</p>
+            <a href="idea2.html" class="explore-button">Explore Now</a>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <h2>Our Services</h2>
+        <div class="service">
+            <div>
+                <h3>Personalized Itineraries</h3>
+                <p>Plan your trip by selecting your preferred state, district, and city to explore tourist attractions.</p>
+            </div>
+            <div>
+                <h3>Local Insights</h3>
+                <p>Get top recommendations and detailed information about tourist spots in every city.</p>
+            </div>
+            <div>
+                <h3>Travel Tips</h3>
+                <p>Discover useful tips and advice for making the most out of your travel experience in India.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-info">
+            <h3>Contact Us</h3>
+            <p>Address: PVPSIT, Kanuru, Vijayawada, India</p>
+            <p>Phone: 9553688238</p>
+            <p>Email: sriharirenduchintala1244@gmail.com</p>
+        </div>
+        <div class="footer-contact">
+            <p>&copy; 2024 Hari's Tourist Places Explorer. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
