@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Hari's Tourist Places Explorer</title>
+    <style>
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('./images/about-bg.jpg'); /* Add your own background image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px 60px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+        }
+
+        nav .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            margin-right: auto;
+        }
+
+        .call-now {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .call-now:hover {
+            background-color: #218838;
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 60px 40px;
+            margin: 120px 100px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 50px;
+            text-align: center;
+            font-size: 16px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer .footer-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        footer p {
+            margin: 0;
+            color: #bbb;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">Hari's Explorer</div>
+        <a href="tel:9553688238" class="call-now">Call Now</a>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <h2>About Us</h2>
+        <p>We are passionate about helping travelers discover the best tourist places in India. Our platform provides personalized itineraries, local insights, and travel tips to ensure you have an unforgettable experience.</p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-info">
+            <h3>Contact Us</h3>
+            <p>Address: PVPSIT, Kanuru, Vijayawada, India</p>
+            <p>Phone: 9553688238</p>
+            <p>Email: sriharirenduchintala1244@gmail.com</p>
+        </div>
+        <div class="footer-contact">
+            <p>&copy; 2024 Hari's Tourist Places Explorer. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
