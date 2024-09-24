@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Hari's Tourist Places Explorer</title>
+    <style>
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('./images/services-bg.jpg'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px 60px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+        }
+
+        nav .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Services Section */
+        .services-section {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 60px 40px;
+            margin: 120px 100px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .services-section h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .service {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+
+        .service div {
+            background-color: #fff;
+            padding: 20px;
+            width: 30%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin: 0 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .service div:hover {
+            transform: scale(1.05);
+        }
+
+        .service h3 {
+            font-size: 1.8rem;
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+
+        .service p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 30px 50px;
+            text-align: center;
+            font-size: 16px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+            color: #bbb;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">Hari's Explorer</div>
+    </nav>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <h2>Our Services</h2>
+        <div class="service">
+            <div>
+                <h3>Personalized Itineraries</h3>
+                <p>Plan your trip by selecting your preferred state, district, and city to explore tourist attractions.</p>
+            </div>
+            <div>
+                <h3>Local Insights</h3>
+                <p>Get top recommendations and detailed information about tourist spots in every city.</p>
+            </div>
+            <div>
+                <h3>Travel Tips</h3>
+                <p>Discover useful tips and advice for making the most out of your travel experience in India.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-contact">
+            <p>&copy; 2024 Hari's Tourist Places Explorer. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
