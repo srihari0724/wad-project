@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Places Explorer</title>
+    <style>
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('./images/IMG-20240509-WA0063.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        select, ul {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color:lightslategray; /* Change to a suitable color */
+            color: white;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        li:hover {
+            background-color:lightseagreen; /* Darker shade on hover */
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: orange;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 200px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            padding-bottom: 80px; /* Adjust to prevent footer overlap */
+        }
+    </style>
+</head>
+<body>
+    <footer>
+        <p>&copy; 2024 Tourist Places Explorer. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
+
+<body>
+    <div class="container">
+        <h1>Hari's Tourist Places Explorer</h1>
+        <select id="stateSelect">
+            <option value="">Select State</option>
+        </select>
+        <select id="districtSelect" disabled>
+            <option value="">Select District</option>
+        </select>
+        <select id="citySelect" disabled>
+            <option value="">Select City</option>
+        </select>
+        <ul id="placesList"></ul>
+    </div>
+
+    <footer>
+        © 2024 Hari's Travel Planner
+    </footer>
+
+    <script>
+        const data = {
+            "states": {
+                "Andhra Pradesh": {
+                    "districts": {
+                        "Anantapur": {
+                            "cities": {
+                                "Anantapur": [
+                                    { name: "Lepakshi", image:"./images/lepakshi.jpeg" },
+                                    { name: "Puttaparthi", image: "./images/puttaparthi.jpg" }
+                                ]
+                            }
+                        },
+                        "Chittoor": {
+                            "cities": {
+                                "Tirupati": [
+                                    { name: "Tirumala Venkateswara Temple", image: "./images/tptyy.jpg" },
+                                    { name: "Sri Kapila theertham", image: "./images/kapila.jpeg" },
+                                    { name: "Chandragiri Fort", image: "./images/chandragiri.jpg" },
+                                    { name: "Talakona Waterfalls", image: "./images/talakona.jpg" },
+                                    { name: "Sri Kalyana Venkateswara Swamy Temple", image: "./images/kalyana.jpg" }
+                                ],
+                                "Sri Kalahasti": [
+                                    { name: "Sri Kalahasti Temple", image: "./images/kalahasthi.jpg" }
+                                ],
+                                "Horsley Hills": [
+                                    { name: "Horsley Hills", image: "./images/horseley.jpeg" }
+                                ]
+                            }
+                        },
+                        "East Godavari": {
+                            "cities": {
+                                "Rajahmundry": [
+                                    { name: "Godavari River", image: "./images/godavari.jpeg" },
+                                    { name: "Dowleswaram Barrage", image: "./images/dowaleswaram.jpg" }
+                                ],
+                                "Kakinada": [
+                                    { name: "Kakinada Beach", image: "./images/kakinada.jpg" },
+                                    { name: "Coringa Wildlife Sanctuary", image: "./images/coringa.jpg" }
+                                ],
+                                "Peddaganjam": [
+                                    { name: "Draksharamam Temple", image: "./images/draksharamam.jpg" }
+                                ]
+                            }
+                        },
+                        "Guntur": {
+                            "cities": {
+                                "Amaravathi": [
+                                    { name: "Amaravati Stupa", image: "./images/amaravathi.jpeg" }
+                                ],
+                                "Guntur": [
+                                    { name: "Gorantla venkateswara swamy Temple", image: "./images/gorantla.jpeg" }
+                                ],
+                                "Mangalagiri": [
+                                    { name: "Panakala Swamy Temple", image: "./images/narasimha.jpeg" }
+                                ],
+                                "Bapatla": [
+                                    { name: "Bapatla Beach", image: "./images/bapatla.jpg" }
+                                ]
+                            }
+                        },
+                        "Krishna": {
+                            "cities": {
+                                "Vijayawada": [
+                                    { name: "Kanaka Durga Temple", image: "./images/indrakeeladri.jpg" },
+                                    { name: "Prakasam Barrage", image: "./images/prakasam barrage.jpg" },
+                                    { name: "Gandhi Hill", image: "./images/gandhihill.jpg" }
+                                ]
+                            }
+                        },
+                        "Kurnool": {
+                            "cities": {
+                                "Kurnool": [
+                                    { name: "Belum Caves", image: "./images/belum.jpeg" },
+                                    { name: "Konda Reddy Fort", image: "./images/kondareddy.jpeg" },
+                                    { name: "Oravakallu Rock Garden", image: "./images/oravakallu.jpeg" },
+                                    { name: "Yaganti Temple", image: "./images/yaganti.jpeg" }
+                                ]
+                            }
+                        },
+                        "Nellore": {
+                            "cities": {
+                                "Nellore": [
+                                    { name: "Penchalakona", image: "./images/penchalkonda.jpeg" },
+                                    { name: "Nelapattu Bird Sanctuary", image: "./images/nelapattu.jpeg" },
+                                    { name: "Jonnawada Kamakshi Temple", image: "./images/jonnawada.jpeg" },
+                                    { name: "Mypadu Beach", image: "./images/mypadu.jpeg" },
+                                    { name: "Udayagiri Fort", image: "./images/udayagiri.jpg" }
+                                ]
+                            }
+                        },
+                        "Prakasam": {
+                            "cities": {
+                                "Ongole": [
+                                    { name: "Kanigiri", image: "./images/kanigiri.jpg" },
+                                    { name: "Chimakurthy", image: "./images/chimakurthy.jpg" },
+                                    { name: "Markapur", image: "./images/markapur.jpg" },
+                                    { name: "Singarayakonda", image: "./images/singarayakonda.jpg" }
+                                ]
+                            }
+                        },
+                        "Srikakulam": {
+                            "cities": {
+                                "Srikakulam": [
+                                    { name: "Arasavalli Sun Temple", image: "./images/arasavalli_sun_temple.jpg" },
+                                    { name: "Baruva Beach", image: "./images/baruva_beach.jpg" },
+                                    { name: "Talapadma", image: "./images/talapadma.jpg" }
+                                ],
+                                "Arasavalli": [
+                                    { name: "Arasavalli Sun Temple", image: "./images/arasavalli_sun_temple.jpg" }
+                                ],
+                                "Baruva": [
+                                    { name: "Baruva Beach", image: "./images/baruva_beach.jpg" }
+                                ],
+                                "Tekkali": [
+                                    { name: "Tekkali", image: "./images/tekkali.jpg" }
+                                ]
+                            }
+                        },
+                        "Visakhapatnam": {
+                            "cities": {
+                                "Visakhapatnam": [
+                                    { name: "Kailasagiri", image: "./images/kailasagiri.jpg" },
+                                    { name: "Ramakrishna Beach", image: "./images/ramakrishna_beach.jpg" },
+                                    { name: "Submarine Museum", image: "./images/submarine_museum.jpg" },
+                                    { name: "Araku Valley", image: "./images/araku_valley.jpg" },
+                                    { name: "Borra Caves", image: "./images/borra_caves.jpg" }
+                                ]
+                            }
+                        },
+                        "West Godavari": {
+                            "cities": {
+                                "Eluru": [
+                                    { name: "Eluru", image: "./images/eluru.jpg" }
+                                ],
+                                "Bhimavaram": [
+                                    { name: "Bhimavaram", image: "./images/bhimavaram.jpg" }
+                                ],
+                                "Palacole": [
+                                    { name: "Palacole", image: "./images/palacole.jpg" }
+                                ],
+                                "Dwaraka Tirumala": [
+                                    { name: "Dwaraka Tirumala", image: "./images/dwaraka_tirumala.jpg" }
+                                ],
+                                "Kolleru Lake": [
+                                    { name: "Kolleru Lake", image: "./images/kolleru_lake.jpg" }
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        // Populate the state dropdown
+        const stateSelect = document.getElementById("stateSelect");
+        const districtSelect = document.getElementById("districtSelect");
+        const citySelect = document.getElementById("citySelect");
+        const placesList = document.getElementById("placesList");
+
+        function populateSelect(element, options) {
+            element.innerHTML = "";
+            element.disabled = false;
+            options.forEach(option => {
+                const opt = document.createElement("option");
+                opt.value = option;
+                opt.textContent = option;
+                element.appendChild(opt);
+            });
+        }
+
+        // Initialize the states dropdown
+        const states = Object.keys(data.states);
+        populateSelect(stateSelect, ["Select State", ...states]);
+
+        stateSelect.addEventListener("change", function () {
+            const selectedState = stateSelect.value;
+            if (selectedState !== "Select State") {
+                const districts = Object.keys(data.states[selectedState].districts);
+                populateSelect(districtSelect, ["Select District", ...districts]);
+                citySelect.innerHTML = "<option>Select City</option>";
+                citySelect.disabled = true;
+                placesList.innerHTML = ""; // Clear previous places
+            }
+        });
+
+        districtSelect.addEventListener("change", function () {
+            const selectedState = stateSelect.value;
+            const selectedDistrict = districtSelect.value;
+            if (selectedDistrict !== "Select District") {
+                const cities = Object.keys(data.states[selectedState].districts[selectedDistrict].cities);
+                populateSelect(citySelect, ["Select City", ...cities]);
+                placesList.innerHTML = ""; // Clear previous places
+            }
+        });
+
+        citySelect.addEventListener("change", function () {
+            const selectedState = stateSelect.value;
+            const selectedDistrict = districtSelect.value;
+            const selectedCity = citySelect.value;
+            if (selectedCity !== "Select City") {
+                const places = data.states[selectedState].districts[selectedDistrict].cities[selectedCity];
+                placesList.innerHTML = "";
+                places.forEach(place => {
+                    const li = document.createElement("li");
+                    li.innerHTML = `<strong>${place.name}</strong><br><img src="${place.image}" alt="${place.name}" loading="lazy">`;
+                    placesList.appendChild(li);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
